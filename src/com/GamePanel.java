@@ -75,7 +75,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
         }
 
         //游戏状态
-        if(isStart==false){
+        if(!isStart){
             g.setColor(Color.white);
             g.setFont(new Font("微软雅黑", Font.BOLD, 40));
             g.drawString("按下空格开始游戏",300,300);
@@ -119,7 +119,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
     //事件监听--需要
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (isStart && isFail==false){
+        if (isStart && !isFail){
             //吃食物
             if (snake_x[0]==food_x&&snake_y[0]==food_y){
                 length++;
